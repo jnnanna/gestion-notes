@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html class="light" lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Profil — EduSecure</title>
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin href="https://fonts.gstatic.com" rel="preconnect" />
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">tailwind.config = {darkMode: 'class', theme:{extend:{colors:{primary:'#135bec','background-light':'#f6f6f8','background-dark':'#101622'},fontFamily:{display:['Lexend','sans-serif']}}}};</script>
+  <style>body{font-family:Lexend, sans-serif}</style>
+</head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen text-[#0d121b] dark:text-white">
+  <header class="p-6 border-b border-[#e7ebf3] dark:border-gray-700 bg-white dark:bg-[#1a202c]">
+    <div class="max-w-[1200px] mx-auto flex items-center gap-4">
+      <div class="flex items-center justify-center size-10 rounded-xl bg-primary text-white p-3">
+        <span class="material-symbols-outlined icon-filled text-2xl">security</span>
+      </div>
+      <div>
+        <h1 class="text-lg font-bold leading-none">EduSecure</h1>
+        <p class="text-xs text-[#4c669a]">Admin Panel</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-[1000px] mx-auto p-6 flex gap-6">
+    <aside class="w-72 bg-white dark:bg-[#1a202c] rounded-xl border border-[#e7ebf3] dark:border-gray-700 p-6 shadow-sm">
+      <div class="flex flex-col items-center gap-4">
+        <div class="w-24 h-24 rounded-full bg-cover bg-center" style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuD0ShR5wpNVX-yjctZDZrq-pAvTZ6ctxnxoY7HL-HWbRCRarciMIp6mV1MmaYE1JgchpK0GMGWJQQ4hGGPabBxu8zOhTd8LdCOI02R_rjwV2GH8UkHoRdEVm72elFy_YzztSdaX14d_Rre2PW2Wj6u8lTkEJrj_hUkBPfI8NNqezrxfXwx4bN5RHnAnJK4NQ_IxlpzpyzYQdnapI6V7F27VUiTBm1QPuk0NCmRKGuSLdgDml_X6E63KTCpulI8UYgsUgv5OBRZwmZ4');"></div>
+        <h3 class="text-lg font-bold">Jean Dupont</h3>
+        <p class="text-sm text-[#4c669a]">jean.dupont@university.edu</p>
+        <div class="flex gap-2 w-full">
+          <button class="flex-1 h-10 rounded-lg bg-primary text-white">Modifier</button>
+          <button class="flex-1 h-10 rounded-lg border border-[#cfd7e7]">Avatar</button>
+        </div>
+      </div>
+    </aside>
+
+    <section class="flex-1 space-y-6">
+      <div class="bg-white dark:bg-[#1a202c] rounded-xl border border-[#e7ebf3] dark:border-gray-700 p-6 shadow-sm">
+        <h2 class="text-lg font-bold mb-4">Informations personnelles</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label class="text-sm">Prénom</label>
+            <input class="w-full h-12 rounded-lg border border-[#cfd7e7] bg-[#f8f9fc] dark:bg-gray-800 px-3" value="Jean" />
+          </div>
+          <div>
+            <label class="text-sm">Nom</label>
+            <input class="w-full h-12 rounded-lg border border-[#cfd7e7] bg-[#f8f9fc] dark:bg-gray-800 px-3" value="Dupont" />
+          </div>
+          <div class="md:col-span-2">
+            <label class="text-sm">E‑mail</label>
+            <input class="w-full h-12 rounded-lg border border-[#cfd7e7] bg-[#f8f9fc] dark:bg-gray-800 px-3" value="jean.dupont@university.edu" />
+          </div>
+          <div>
+            <label class="text-sm">Département</label>
+            <select class="w-full h-12 rounded-lg border border-[#cfd7e7] bg-[#f8f9fc] dark:bg-gray-800 px-3">
+              <option>Informatique</option>
+              <option>Mathématiques</option>
+            </select>
+          </div>
+          <div>
+            <label class="text-sm">Téléphone</label>
+            <input class="w-full h-12 rounded-lg border border-[#cfd7e7] bg-[#f8f9fc] dark:bg-gray-800 px-3" value="+33 6 12 34 56 78" />
+          </div>
+        </div>
+        <div class="mt-4 text-right">
+          <button class="px-6 h-10 rounded-lg bg-primary text-white">Enregistrer</button>
+        </div>
+      </div>
+
+      <div class="bg-white dark:bg-[#1a202c] rounded-xl border border-[#e7ebf3] dark:border-gray-700 p-6 shadow-sm">
+        <h2 class="text-lg font-bold mb-4">Sécurité</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="p-4 rounded-lg bg-[#f8f9fc] dark:bg-gray-800">
+            <p class="text-sm">Changer mot de passe</p>
+            <div class="mt-3 flex gap-2">
+              <input class="flex-1 h-10 rounded-lg border border-[#cfd7e7] bg-white dark:bg-gray-900 px-3" placeholder="Nouveau mot de passe" />
+              <button class="px-4 rounded-lg bg-primary text-white">Mettre à jour</button>
+            </div>
+          </div>
+          <div class="p-4 rounded-lg bg-[#f8f9fc] dark:bg-gray-800">
+            <p class="text-sm">2FA</p>
+            <p class="text-xs text-[#4c669a] mt-2">Activer l'authentification à deux facteurs</p>
+            <div class="mt-3">
+              <label class="inline-flex items-center gap-2"><input type="checkbox" checked class="w-4 h-4"/> Activer</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
