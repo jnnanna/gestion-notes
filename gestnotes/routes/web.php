@@ -26,5 +26,4 @@ Route::post('/forgot-password', [ForgotPasswordController::class, 'sendResetLink
 // Routes protégées (après authentification)
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-    Route::get('/dashboard/variant2', [DashboardController::class, 'variant2'])->name('dashboard.variant2');
 });

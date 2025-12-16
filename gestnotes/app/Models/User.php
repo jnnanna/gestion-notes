@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use App\Models\Role;
 
 class User extends Authenticatable
 {
@@ -61,6 +62,34 @@ class User extends Authenticatable
     public function role()
     {
         return $this->belongsTo(Role::class);
+    }
+
+    /**
+     * Vérifie le(s) rôle(s). Accepts 'Admin' or 'Admin,Manager'
+     */
+    public function hasRole($roles): bool
+    {
+        if (! $this->relationLoaded('role') && $this->role === null) {
+            $this->load('role');
+        }
+        $roleName = $this->role->name ?? null;
+        if (! $roleName) return false;
+
+        $roles = is_array($roles) ? $roles : array_map('trim', explode(',', $roles));
+        return in_array($roleName, $roles, true);
+    }
+
+    /**
+     * Vérifie une permission définie dans la table roles->permissions (JSON/array).
+     */
+    public function hasPermission(string $permission): bool
+    {
+        $permissions = $this->role->permissions ?? [];
+        if (is_string($permissions)) {
+            $decoded = json_decode($permissions, true);
+            $permissions = is_array($decoded) ? $decoded : [];
+        }
+        return in_array($permission, $permissions, true);
     }
 
     // Helper pour le nom complet

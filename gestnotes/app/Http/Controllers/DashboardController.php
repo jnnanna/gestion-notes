@@ -38,31 +38,4 @@ class DashboardController extends Controller
 
         return view('dashboard.index', compact('stats', 'recentActivities', 'gradeDistribution'));
     }
-
-    public function variant2()
-    {
-        // Même logique que index() mais avec vue différente
-        $stats = [
-            'scanned_documents' => ScannedDocument::count(),
-            'active_modules' => Module::where('status', 'active')->count(),
-            'pending_validations' => Grade::where('status', 'pending')->count(),
-            'system_alerts' => 2,
-            'total_students' => Student::count(),
-        ];
-
-        $recentActivities = Grade::with(['module.filiere', 'module.responsible', 'student'])
-            ->latest()
-            ->take(3)
-            ->get();
-
-        $gradeDistribution = [
-            '10-12' => Grade::whereBetween('final_grade', [10, 11.99])->count(),
-            '12-14' => Grade::whereBetween('final_grade', [12, 13.99])->count(),
-            '14-16' => Grade::whereBetween('final_grade', [14, 15.99])->count(),
-            '16-18' => Grade::whereBetween('final_grade', [16, 17.99])->count(),
-            '18-20' => Grade::whereBetween('final_grade', [18, 20])->count(),
-        ];
-
-        return view('dashboard.variant2', compact('stats', 'recentActivities', 'gradeDistribution'));
-    }
 }

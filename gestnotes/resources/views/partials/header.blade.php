@@ -7,7 +7,14 @@
         </button>
         <h2 class="text-[#0d121b] dark:text-white text-xl font-bold leading-tight tracking-tight hidden sm:block">Aperçu Général</h2>
     </div>
+
     <div class="flex items-center gap-4 sm:gap-8">
+        <!-- Variant Switch -->
+        <div class="flex items-center gap-2 mr-2">
+            <button id="variant1Btn" type="button" aria-pressed="true" class="px-3 py-1 text-sm rounded-md bg-primary/10 text-primary hover:bg-primary/20 transition">Variante 1</button>
+            <button id="variant2Btn" type="button" aria-pressed="false" class="px-3 py-1 text-sm rounded-md bg-transparent text-[#4c669a] dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition">Variante 2</button>
+        </div>
+
         <!-- Search -->
         <label class="hidden md:flex flex-col min-w-40 !h-10 max-w-64">
             <div class="flex w-full flex-1 items-stretch rounded-lg h-full">
@@ -17,6 +24,7 @@
                 <input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0d121b] dark:text-white focus:outline-0 focus:ring-0 border-none bg-[#f8f9fc] dark:bg-gray-800 focus:border-none h-full placeholder:text-[#4c669a] px-4 rounded-l-none border-l-0 pl-2 text-sm font-normal leading-normal" placeholder="Rechercher un étudiant, module..." value=""/>
             </div>
         </label>
+
         <div class="flex items-center gap-3">
             <button class="relative flex size-10 cursor-pointer items-center justify-center overflow-hidden rounded-full hover:bg-[#f8f9fc] dark:hover:bg-gray-800 text-[#0d121b] dark:text-white transition">
                 <span class="material-symbols-outlined text-[24px]">notifications</span>
@@ -32,4 +40,36 @@
             </div>
         </div>
     </div>
+
+    <script>
+        (function () {
+            const btn1 = document.getElementById('variant1Btn');
+            const btn2 = document.getElementById('variant2Btn');
+
+            function showVariant(name) {
+                const v1 = document.getElementById('dashboard-variant1');
+                const v2 = document.getElementById('dashboard-variant2');
+                if (!v1 || !v2) return;
+                if (name === 'v2') {
+                    v1.classList.add('hidden');
+                    v2.classList.remove('hidden');
+                    btn1.classList.remove('bg-primary/10','text-primary');
+                    btn2.classList.add('bg-primary/10','text-primary');
+                } else {
+                    v2.classList.add('hidden');
+                    v1.classList.remove('hidden');
+                    btn2.classList.remove('bg-primary/10','text-primary');
+                    btn1.classList.add('bg-primary/10','text-primary');
+                }
+                localStorage.setItem('dashboardVariant', name);
+            }
+
+            document.addEventListener('DOMContentLoaded', function () {
+                const saved = localStorage.getItem('dashboardVariant') || 'v1';
+                showVariant(saved);
+                btn1 && btn1.addEventListener('click', () => showVariant('v1'));
+                btn2 && btn2.addEventListener('click', () => showVariant('v2'));
+            });
+        })();
+    </script>
 </header>
