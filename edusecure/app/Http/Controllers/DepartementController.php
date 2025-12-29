@@ -62,7 +62,7 @@ class DepartementController extends Controller
     {
         $departement->load(['chef', 'filieres', 'enseignants']);
 
-        return view('departements. show', compact('departement'));
+        return view('departements.show', compact('departement'));
     }
 
     /**

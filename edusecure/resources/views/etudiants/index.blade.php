@@ -7,7 +7,7 @@
 @php
     $breadcrumbs = [
         ['label' => 'Accueil', 'url' => route('dashboard')],
-        ['label' => 'Étudiants', 'url' => route('etudiants. index')],
+        ['label' => 'Étudiants', 'url' => route('etudiants.index')],
     ];
 @endphp
 
@@ -44,7 +44,7 @@
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
     <x-stat-card 
         title="Total Étudiants" 
-        value="{{ $stats['total'] ??   1247 }}" 
+        value="{{ $stats['total'] ?? 1247 }}" 
         icon="groups" 
         iconBg="teal"
         subtitle="Tous niveaux"
@@ -52,7 +52,7 @@
     
     <x-stat-card 
         title="Actifs" 
-        value="{{ $stats['actifs'] ??  1198 }}" 
+        value="{{ $stats['actifs'] ?? 1198 }}" 
         icon="person_check" 
         iconBg="green"
         trend="up"
@@ -93,7 +93,7 @@
             <x-select 
                 name="filiere_id" 
                 label="Filière"
-                : options="[
+                :options="[
                     '' => 'Toutes les filières',
                     1 => 'Génie Logiciel',
                     2 => 'Big Data & IA',
@@ -173,7 +173,7 @@
                     <th class="px-4 py-3 text-left font-semibold text-[#4c669a] dark:text-gray-400">Photo</th>
                     <th class="px-4 py-3 text-left font-semibold text-[#4c669a] dark:text-gray-400">Matricule</th>
                     <th class="px-4 py-3 text-left font-semibold text-[#4c669a] dark:text-gray-400">Nom & Prénom</th>
-                    <th class="px-4 py-3 text-left font-semibold text-[#4c669a] dark: text-gray-400">Filière</th>
+                    <th class="px-4 py-3 text-left font-semibold text-[#4c669a] dark:text-gray-400">Filière</th>
                     <th class="px-4 py-3 text-left font-semibold text-[#4c669a] dark:text-gray-400">Niveau</th>
                     <th class="px-4 py-3 text-left font-semibold text-[#4c669a] dark:text-gray-400">Groupe</th>
                     <th class="px-4 py-3 text-left font-semibold text-[#4c669a] dark:text-gray-400">Contact</th>
@@ -181,13 +181,13 @@
                 </tr>
             </thead>
             <tbody class="divide-y divide-[#e7ebf3] dark:divide-gray-800">
-                @forelse($etudiants ??   [] as $etudiant)
-                    <tr class="hover:bg-[#f8f9fc] dark: hover:bg-gray-800/50 transition">
+                @forelse($etudiants ?? [] as $etudiant)
+                    <tr class="hover:bg-[#f8f9fc] dark:hover:bg-gray-800/50 transition">
                         <td class="px-4 py-3">
                             <input type="checkbox" class="rounded border-gray-300 text-[#135bec] focus:ring-[#135bec]">
                         </td>
                         <td class="px-4 py-3">
-                            <div class="size-10 rounded-full bg-cover bg-center" style="background-image: url('{{ $etudiant->photo_url ??  'https://ui-avatars.com/api/? name='. urlencode($etudiant->nom_complet).'&background=135bec&color=fff' }}');"></div>
+                            <div class="size-10 rounded-full bg-cover bg-center" style="background-image: url('{{ $etudiant->photo_url ?? 'https://ui-avatars.com/api/?name='.urlencode($etudiant->nom_complet).'&background=135bec&color=fff' }}');"></div>
                         </td>
                         <td class="px-4 py-3">
                             <span class="font-mono text-[#135bec] font-medium">{{ $etudiant->matricule }}</span>
@@ -203,10 +203,10 @@
                             <x-badge variant="default">{{ $etudiant->niveau }}</x-badge>
                         </td>
                         <td class="px-4 py-3">
-                            <span class="text-[#4c669a] dark:text-gray-400">{{ $etudiant->groupe ??  '-' }}</span>
+                            <span class="text-[#4c669a] dark:text-gray-400">{{ $etudiant->groupe ?? '-' }}</span>
                         </td>
                         <td class="px-4 py-3">
-                            <span class="text-[#4c669a] dark:text-gray-400">{{ $etudiant->telephone ??  '-' }}</span>
+                            <span class="text-[#4c669a] dark:text-gray-400">{{ $etudiant->telephone ?? '-' }}</span>
                         </td>
                         <td class="px-4 py-3 text-right">
                             <div class="flex items-center justify-end gap-1">
@@ -228,7 +228,7 @@
                 @empty
                     {{-- Sample Data --}}
                     @foreach([
-                        ['matricule' => '2023-0001', 'nom' => 'ALAMI', 'prenom' => 'Ahmed', 'email' => 'ahmed. alami@etudiant.ma', 'filiere' => 'Génie Logiciel', 'niveau' => 'L3', 'groupe' => 'A', 'tel' => '+212 6 12 34 56 78'],
+                        ['matricule' => '2023-0001', 'nom' => 'ALAMI', 'prenom' => 'Ahmed', 'email' => 'ahmed.alami@etudiant.ma', 'filiere' => 'Génie Logiciel', 'niveau' => 'L3', 'groupe' => 'A', 'tel' => '+212 6 12 34 56 78'],
                         ['matricule' => '2023-0002', 'nom' => 'BENALI', 'prenom' => 'Fatima', 'email' => 'fatima.benali@etudiant.ma', 'filiere' => 'Génie Logiciel', 'niveau' => 'L3', 'groupe' => 'A', 'tel' => '+212 6 23 45 67 89'],
                         ['matricule' => '2023-0003', 'nom' => 'CHAKIR', 'prenom' => 'Mohamed', 'email' => 'mohamed.chakir@etudiant.ma', 'filiere' => 'Génie Logiciel', 'niveau' => 'L3', 'groupe' => 'B', 'tel' => '+212 6 34 56 78 90'],
                         ['matricule' => '2023-0004', 'nom' => 'IDRISSI', 'prenom' => 'Sara', 'email' => 'sara.idrissi@etudiant.ma', 'filiere' => 'Big Data & IA', 'niveau' => 'M1', 'groupe' => 'A', 'tel' => '+212 6 45 67 89 01'],
@@ -286,8 +286,8 @@
     {{-- Table Footer --}}
     <div class="p-4 bg-[#f8f9fc] dark:bg-gray-800/50 border-t border-[#e7ebf3] dark:border-gray-800">
         <div class="flex items-center justify-between">
-            <span class="text-sm text-[#4c669a] dark: text-gray-400">
-                Affichage de 1 à 5 sur {{ $stats['total'] ??   1247 }} résultats
+            <span class="text-sm text-[#4c669a] dark:text-gray-400">
+                Affichage de 1 à 5 sur {{ $stats['total'] ?? 1247 }} résultats
             </span>
             <div class="flex items-center gap-2">
                 {{-- Pagination here --}}

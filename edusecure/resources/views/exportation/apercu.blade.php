@@ -24,7 +24,7 @@
                     <h1 class="text-2xl font-black text-[#0d121b] dark:text-white">
                         Aperçu du Document
                     </h1>
-                    <x-badge variant="info">{{ $export->type_document->label() ??  'Relevé de Notes' }}</x-badge>
+                    <x-badge variant="info">{{ $export->type_document->label() ?? 'Relevé de Notes' }}</x-badge>
                 </div>
                 <div class="flex items-center gap-4 text-sm text-[#4c669a] dark:text-gray-400">
                     <span class="flex items-center gap-1">
@@ -37,7 +37,7 @@
                     </span>
                     <span class="flex items-center gap-1">
                         <span class="material-symbols-outlined text-[16px]">description</span>
-                        Format: {{ strtoupper($export->format->value ??  'PDF') }}
+                        Format: {{ strtoupper($export->format->value ?? 'PDF') }}
                     </span>
                 </div>
             </div>

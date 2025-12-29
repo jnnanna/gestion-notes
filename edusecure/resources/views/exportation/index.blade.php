@@ -7,7 +7,7 @@
     @php
         $breadcrumbs = [
             ['label' => 'Accueil', 'url' => route('dashboard')],
-            ['label' => 'Exportation', 'url' => route('exportation. index')],
+            ['label' => 'Exportation', 'url' => route('exportation.index')],
         ];
     @endphp
 
@@ -21,12 +21,12 @@
                         <span class="material-symbols-outlined text-2xl icon-filled">file_download</span>
                     </div>
                     <div>
-                        <h1 class="text-3xl font-black tracking-tight text-[#0d121b] dark: text-white">
+                        <h1 class="text-3xl font-black tracking-tight text-[#0d121b] dark:text-white">
                             Exportation & Rapports
                         </h1>
                     </div>
                 </div>
-                <p class="text-[#4c669a] dark: text-gray-400 text-lg leading-relaxed">
+                <p class="text-[#4c669a] dark:text-gray-400 text-lg leading-relaxed">
                     Générez et téléchargez vos documents : relevés de notes, PV, bulletins, listes...
                 </p>
             </div>
@@ -56,7 +56,7 @@
                         <span class="material-symbols-outlined text-2xl">description</span>
                     </div>
                     <h3 class="text-lg font-bold text-[#0d121b] dark:text-white mb-2">Relevé de Notes</h3>
-                    <p class="text-sm text-[#4c669a] dark: text-gray-400 mb-4">
+                    <p class="text-sm text-[#4c669a] dark:text-gray-400 mb-4">
                         Document officiel avec notes et moyennes
                     </p>
                     <button onclick="loadTemplate('releve')"
@@ -78,7 +78,7 @@
                         class="size-12 rounded-xl bg-green-500 text-white flex items-center justify-center mb-4 shadow-lg shadow-green-500/30 group-hover:scale-110 transition-transform">
                         <span class="material-symbols-outlined text-2xl">gavel</span>
                     </div>
-                    <h3 class="text-lg font-bold text-[#0d121b] dark: text-white mb-2">Procès-Verbal</h3>
+                    <h3 class="text-lg font-bold text-[#0d121b] dark:text-white mb-2">Procès-Verbal</h3>
                     <p class="text-sm text-[#4c669a] dark:text-gray-400 mb-4">
                         PV de délibération officiel
                     </p>
@@ -168,14 +168,14 @@
                                 class="p-4 rounded-lg border-2 border-[#e7ebf3] dark:border-gray-700 cursor-pointer transition peer-checked:border-green-500 peer-checked:bg-green-50 dark:peer-checked:bg-green-900/10 hover:border-green-500/50">
                                 <div class="flex items-center gap-3 mb-2">
                                     <span class="material-symbols-outlined text-green-600">gavel</span>
-                                    <span class="font-bold text-[#0d121b] dark: text-white">Procès-Verbal</span>
+                                    <span class="font-bold text-[#0d121b] dark:text-white">Procès-Verbal</span>
                                 </div>
-                                <p class="text-xs text-[#4c669a] dark: text-gray-400">PV de délibération</p>
+                                <p class="text-xs text-[#4c669a] dark:text-gray-400">PV de délibération</p>
                             </div>
                         </label>
 
                         <label class="relative">
-                            <input type="radio" name="type_document" value="bulletin" x-model="form. type_document"
+                            <input type="radio" name="type_document" value="bulletin" x-model="form.type_document"
                                 class="peer sr-only">
                             <div
                                 class="p-4 rounded-lg border-2 border-[#e7ebf3] dark:border-gray-700 cursor-pointer transition peer-checked:border-purple-500 peer-checked:bg-purple-50 dark:peer-checked:bg-purple-900/10 hover:border-purple-500/50">
@@ -188,7 +188,7 @@
                         </label>
 
                         <label class="relative">
-                            <input type="radio" name="type_document" value="liste" x-model="form. type_document"
+                            <input type="radio" name="type_document" value="liste" x-model="form.type_document"
                                 class="peer sr-only">
                             <div
                                 class="p-4 rounded-lg border-2 border-[#e7ebf3] dark:border-gray-700 cursor-pointer transition peer-checked:border-orange-500 peer-checked:bg-orange-50 dark:peer-checked:bg-orange-900/10 hover:border-orange-500/50">
@@ -201,13 +201,13 @@
                         </label>
 
                         <label class="relative">
-                            <input type="radio" name="type_document" value="donnees_brutes" x-model="form. type_document"
+                            <input type="radio" name="type_document" value="donnees_brutes" x-model="form.type_document"
                                 class="peer sr-only">
                             <div
                                 class="p-4 rounded-lg border-2 border-[#e7ebf3] dark:border-gray-700 cursor-pointer transition peer-checked:border-[#135bec] peer-checked:bg-blue-50 dark:peer-checked:bg-blue-900/10 hover:border-[#135bec]/50">
                                 <div class="flex items-center gap-3 mb-2">
                                     <span class="material-symbols-outlined text-[#135bec]">table_chart</span>
-                                    <span class="font-bold text-[#0d121b] dark: text-white">Données Brutes</span>
+                                    <span class="font-bold text-[#0d121b] dark:text-white">Données Brutes</span>
                                 </div>
                                 <p class="text-xs text-[#4c669a] dark:text-gray-400">Export Excel/CSV</p>
                             </div>
@@ -219,12 +219,12 @@
                 <x-card title="Critères de Sélection" icon="filter_list">
                     <div class="space-y-4">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <x-select name="annee_academique_id" label="Année Académique" required : options="[
+                            <x-select name="annee_academique_id" label="Année Académique" required :options="[
                                     1 => '2023-2024',
                                     2 => '2024-2025',
                                 ]" x-model="form.annee_academique_id" />
 
-                            <x-select name="semestre_id" label="Semestre" : options="[
+                            <x-select name="semestre_id" label="Semestre" :options="[
                                     '' => 'Tous les semestres',
                                     1 => 'S1',
                                     2 => 'S2',
@@ -235,8 +235,8 @@
                                 ]" x-model="form.semestre_id" />
                         </div>
 
-                        <div class="grid grid-cols-1 md: grid-cols-2 gap-4">
-                            <x-select name="filiere_id" label="Filière" : options="[
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <x-select name="filiere_id" label="Filière" :options="[
                                     '' => 'Toutes les filières',
                                     1 => 'Génie Logiciel',
                                     2 => 'Big Data & IA',
@@ -253,8 +253,8 @@
 
                         {{-- Student Selection (for Bulletin) --}}
                         <div x-show="form.type_document === 'bulletin'" style="display: none;">
-                            <x-select name="etudiant_id" label="Étudiant" : options="[
-                                    '' => 'Sélectionner un étudiant.. .',
+                            <x-select name="etudiant_id" label="Étudiant" :options="[
+                                    '' => 'Sélectionner un étudiant...',
                                     1 => 'ALAMI Ahmed (2023-0001)',
                                     2 => 'BENALI Fatima (2023-0002)',
                                     3 => 'CHAKIR Mohamed (2023-0003)',
@@ -322,7 +322,7 @@
                                 <input type="checkbox" name="options[avec_logo]" id="avec_logo"
                                     class="rounded border-gray-300 text-[#135bec] focus:ring-[#135bec]" checked>
                                 <label for="avec_logo"
-                                    class="flex-1 text-sm font-medium text-[#0d121b] dark: text-white cursor-pointer">
+                                    class="flex-1 text-sm font-medium text-[#0d121b] dark:text-white cursor-pointer">
                                     Inclure le logo de l'établissement
                                 </label>
                             </div>
@@ -366,11 +366,11 @@
                                 </label>
                             </div>
 
-                            <div class="flex items-center gap-3 p-3 rounded-lg bg-[#f8f9fc] dark: bg-gray-800">
+                            <div class="flex items-center gap-3 p-3 rounded-lg bg-[#f8f9fc] dark:bg-gray-800">
                                 <input type="checkbox" name="options[avec_mise_en_forme]" id="avec_mise_en_forme"
                                     class="rounded border-gray-300 text-[#135bec] focus:ring-[#135bec]" checked>
                                 <label for="avec_mise_en_forme"
-                                    class="flex-1 text-sm font-medium text-[#0d121b] dark: text-white cursor-pointer">
+                                    class="flex-1 text-sm font-medium text-[#0d121b] dark:text-white cursor-pointer">
                                     Appliquer la mise en forme
                                 </label>
                             </div>
@@ -414,12 +414,12 @@
                         </div>
                         <div class="flex items-center justify-between text-sm">
                             <span class="text-[#4c669a] dark:text-gray-400">Format</span>
-                            <span class="font-bold text-[#0d121b] dark: text-white uppercase"
+                            <span class="font-bold text-[#0d121b] dark:text-white uppercase"
                                 x-text="form.format || '-'">-</span>
                         </div>
                         <div class="flex items-center justify-between text-sm">
-                            <span class="text-[#4c669a] dark: text-gray-400">Année</span>
-                            <span class="font-bold text-[#0d121b] dark: text-white">2023-2024</span>
+                            <span class="text-[#4c669a] dark:text-gray-400">Année</span>
+                            <span class="font-bold text-[#0d121b] dark:text-white">2023-2024</span>
                         </div>
                         <div class="flex items-center justify-between text-sm">
                             <span class="text-[#4c669a] dark:text-gray-400">Taille estimée</span>

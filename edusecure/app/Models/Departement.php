@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Departement extends Model
@@ -40,14 +41,14 @@ class Departement extends Model
         return $this->hasMany(User::class);
     }
 
-    public function modules(): HasMany
+    public function modules(): HasManyThrough
     {
-        return $this->hasMany(Module::class, Filiere::class);
+        return $this->hasManyThrough(Module::class, Filiere::class);
     }
 
-    public function etudiants(): HasMany
+    public function etudiants(): HasManyThrough
     {
-        return $this->hasMany(Etudiant::class, Filiere::class);
+        return $this->hasManyThrough(Etudiant::class, Filiere::class);
     }
 
     // Scopes

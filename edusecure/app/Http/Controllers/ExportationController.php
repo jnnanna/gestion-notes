@@ -43,4 +43,11 @@ class ExportationController extends Controller
     {
         return view('exportation.apercu');
     }
+
+    public function nettoyerExpires(Request $request): RedirectResponse
+    {
+        $count = Export::nettoyerExpires();
+
+        return back()->with('success', "Nettoyé : {$count} export(s) expiré(s) supprimé(s).");
+    }
 }

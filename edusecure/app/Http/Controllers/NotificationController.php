@@ -26,6 +26,21 @@ class NotificationController extends Controller
     }
 
     /**
+     * Display a listing of unread notifications.
+     */
+    public function nonLues(): View
+    {
+        /** @var \App\Models\User $user */
+        $user = Auth::user();
+
+        $notifications = $user
+            ->unreadNotifications()
+            ->paginate(20);
+
+        return view('notifications.index', compact('notifications'));
+    }
+
+    /**
      * Mark a notification as read.
      */
     public function marquerLue(string $id): JsonResponse
