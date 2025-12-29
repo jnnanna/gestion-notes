@@ -21,7 +21,7 @@ class DashboardController extends Controller
         // Récupérer les alertes
         $alertes = $this->getAlerts();
         
-        return view('dashboard. index', compact('stats', 'activites', 'alertes'));
+        return view('dashboard.index', compact('stats', 'activites', 'alertes'));
     }
     
     /**

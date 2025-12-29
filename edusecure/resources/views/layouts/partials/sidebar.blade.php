@@ -23,7 +23,7 @@
             </a>
 
             <!-- Importation -->
-            <a href="{{ route('importation. index') }}"
+            <a href="{{ route('importation.index') }}"
                 class="flex items-center gap-3 px-3 py-3 rounded-lg {{ request()->routeIs('importation.*') ? 'bg-[#135bec]/10 text-[#135bec]' : 'text-[#4c669a] dark:text-gray-400 hover:bg-[#f8f9fc] dark: hover:bg-gray-800' }} transition-colors">
                 <span
                     class="material-symbols-outlined {{ request()->routeIs('importation.*') ? 'icon-filled' : '' }} text-[24px]">document_scanner</span>
@@ -31,7 +31,7 @@
             </a>
 
             <!-- Feuilles de Notes -->
-            <a href="{{ route('feuilles-notes. index') }}"
+            <a href="{{ route('feuilles-notes.index') }}"
                 class="flex items-center gap-3 px-3 py-3 rounded-lg {{ request()->routeIs('feuilles-notes.*') || request()->routeIs('validation.*') ? 'bg-[#135bec]/10 text-[#135bec]' : 'text-[#4c669a] dark:text-gray-400 hover:bg-[#f8f9fc] dark:hover:bg-gray-800' }} transition-colors">
                 <span
                     class="material-symbols-outlined {{ request()->routeIs('feuilles-notes.*') || request()->routeIs('validation.*') ? 'icon-filled' : '' }} text-[24px]">description</span>

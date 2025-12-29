@@ -7,14 +7,14 @@
         <!-- Header -->
         <div class="text-center">
             <h2 class="text-2xl font-bold text-[#0d121b] dark:text-white">Bienvenue</h2>
-            <p class="text-sm text-[#4c669a] dark: text-gray-400 mt-1">
+            <p class="text-sm text-[#4c669a] dark:text-gray-400 mt-1">
                 Connectez-vous à votre espace de gestion
             </p>
         </div>
 
         <!-- Session Status -->
         @if (session('status'))
-            <x-alert type="success" : dismissible="false">
+            <x-alert type="success" :dismissible="false">
                 {{ session('status') }}
             </x-alert>
         @endif
@@ -24,13 +24,12 @@
             @csrf
 
             <!-- Email Address -->
-            <x-input name="email" type="email" label="Adresse Email" placeholder="exemple@university.edu" icon="email" :
-                value="old('email')" required autofocus />
+            <x-input name="email" type="email" label="Adresse Email" placeholder="exemple@university.edu" icon="email" value="{{ old('email') }}" required autofocus />
 
             <!-- Password -->
-            <div class="space-y-1. 5">
+            <div class="space-y-1.5">
                 <div class="flex items-center justify-between">
-                    <label for="password" class="text-sm font-semibold text-[#0d121b] dark: text-white">
+                    <label for="password" class="text-sm font-semibold text-[#0d121b] dark:text-white">
                         Mot de passe
                         <span class="text-red-500">*</span>
                     </label>
@@ -42,8 +41,8 @@
                 <div class="relative" x-data="{ showPassword: false }">
                     <span
                         class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[#4c669a] text-[20px]">lock</span>
-                    <input : type="showPassword ? 'text' : 'password'" name="password" id="password" required
-                        class="w-full rounded-lg border bg-[#f8f9fc] dark:bg-gray-800 text-sm text-[#0d121b] dark:text-white focus:ring-[#135bec] focus:border-[#135bec] placeholder: text-[#4c669a] pl-10 pr-12 py-2.5 border-[#e7ebf3] dark:border-gray-700"
+                    <input :type="showPassword ? 'text' : 'password'" name="password" id="password" required
+                        class="w-full rounded-lg border bg-[#f8f9fc] dark:bg-gray-800 text-sm text-[#0d121b] dark:text-white focus:ring-[#135bec] focus:border-[#135bec] placeholder:text-[#4c669a] pl-10 pr-12 py-2.5 border-[#e7ebf3] dark:border-gray-700"
                         placeholder="••••••••" />
                     <button type="button" @click="showPassword = !showPassword"
                         class="absolute right-3 top-1/2 -translate-y-1/2 text-[#4c669a] hover:text-[#0d121b] dark:hover:text-white transition-colors">

@@ -13,7 +13,7 @@
 
         <!-- Gestion Modules & Filières -->
         <li>
-            <a href="{{ route('modules. index') }}"
+            <a href="{{ route('modules.index') }}"
                 class="flex items-center gap-2 h-12 text-sm {{ request()->routeIs('modules.*') || request()->routeIs('filieres.*') || request()->routeIs('departements.*') ? 'font-bold text-[#135bec] border-b-2 border-[#135bec]' : 'font-medium text-[#4c669a] dark:text-gray-400 hover:text-[#0d121b] dark:hover:text-white border-b-2 border-transparent hover:border-gray-200' }} transition-colors">
                 <span
                     class="material-symbols-outlined text-[20px] {{ request()->routeIs('modules.*') || request()->routeIs('filieres.*') || request()->routeIs('departements.*') ? 'icon-filled' : '' }}">view_module</span>
@@ -33,7 +33,7 @@
 
         <!-- Validation des Notes -->
         <li>
-            <a href="{{ route('validation. index') }}"
+            <a href="{{ route('validation.index') }}"
                 class="flex items-center gap-2 h-12 text-sm {{ request()->routeIs('validation.*') ? 'font-bold text-[#135bec] border-b-2 border-[#135bec]' : 'font-medium text-[#4c669a] dark: text-gray-400 hover: text-[#0d121b] dark:hover:text-white border-b-2 border-transparent hover:border-gray-200' }} transition-colors">
                 <span
                     class="material-symbols-outlined text-[20px] {{ request()->routeIs('validation.*') ? 'icon-filled' : '' }}">fact_check</span>

@@ -1,4 +1,4 @@
-@extends('layouts. app')
+@extends('layouts.app')
 
 @section('title', 'Tableau de Bord')
 @section('page-title', 'Tableau de Bord')
