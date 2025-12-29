@@ -24,7 +24,7 @@
         <!-- Importation & Numérisation -->
         <li>
             <a href="{{ route('importation.index') }}"
-                class="flex items-center gap-2 h-12 text-sm {{ request()->routeIs('importation.*') ? 'font-bold text-[#135bec] border-b-2 border-[#135bec]' : 'font-medium text-[#4c669a] dark:text-gray-400 hover:text-[#0d121b] dark: hover:text-white border-b-2 border-transparent hover: border-gray-200' }} transition-colors">
+                class="flex items-center gap-2 h-12 text-sm {{ request()->routeIs('importation.*') ? 'font-bold text-[#135bec] border-b-2 border-[#135bec]' : 'font-medium text-[#4c669a] dark:text-gray-400 hover:text-[#0d121b] dark:hover:text-white border-b-2 border-transparent hover:border-gray-200' }} transition-colors">
                 <span
                     class="material-symbols-outlined text-[20px] {{ request()->routeIs('importation.*') ? 'icon-filled' : '' }}">document_scanner</span>
                 Importation & Numérisation
@@ -34,7 +34,7 @@
         <!-- Validation des Notes -->
         <li>
             <a href="{{ route('validation.index') }}"
-                class="flex items-center gap-2 h-12 text-sm {{ request()->routeIs('validation.*') ? 'font-bold text-[#135bec] border-b-2 border-[#135bec]' : 'font-medium text-[#4c669a] dark: text-gray-400 hover: text-[#0d121b] dark:hover:text-white border-b-2 border-transparent hover:border-gray-200' }} transition-colors">
+                class="flex items-center gap-2 h-12 text-sm {{ request()->routeIs('validation.*') ? 'font-bold text-[#135bec] border-b-2 border-[#135bec]' : 'font-medium text-[#4c669a] dark:text-gray-400 hover:text-[#0d121b] dark:hover:text-white border-b-2 border-transparent hover:border-gray-200' }} transition-colors">
                 <span
                     class="material-symbols-outlined text-[20px] {{ request()->routeIs('validation.*') ? 'icon-filled' : '' }}">fact_check</span>
                 Validation des Notes
@@ -44,7 +44,7 @@
         <!-- Exportation -->
         <li>
             <a href="{{ route('exportation.index') }}"
-                class="flex items-center gap-2 h-12 text-sm {{ request()->routeIs('exportation.*') ? 'font-bold text-[#135bec] border-b-2 border-[#135bec]' : 'font-medium text-[#4c669a] dark:text-gray-400 hover:text-[#0d121b] dark:hover: text-white border-b-2 border-transparent hover:border-gray-200' }} transition-colors">
+                class="flex items-center gap-2 h-12 text-sm {{ request()->routeIs('exportation.*') ? 'font-bold text-[#135bec] border-b-2 border-[#135bec]' : 'font-medium text-[#4c669a] dark:text-gray-400 hover:text-[#0d121b] dark:hover:text-white border-b-2 border-transparent hover:border-gray-200' }} transition-colors">
                 <span
                     class="material-symbols-outlined text-[20px] {{ request()->routeIs('exportation.*') ? 'icon-filled' : '' }}">file_download</span>
                 Exportation

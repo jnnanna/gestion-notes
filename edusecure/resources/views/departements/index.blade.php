@@ -7,7 +7,7 @@
 @php
     $breadcrumbs = [
         ['label' => 'Accueil', 'url' => route('dashboard')],
-        ['label' => 'Départements', 'url' => route('departements. index')],
+        ['label' => 'Départements', 'url' => route('departements.index')],
     ];
 @endphp
 
@@ -17,12 +17,12 @@
         <h1 class="text-3xl md:text-4xl font-black tracking-tight text-[#0d121b] dark:text-white mb-2">
             Gestion des Départements
         </h1>
-        <p class="text-[#4c669a] dark: text-gray-400 text-lg leading-relaxed">
+        <p class="text-[#4c669a] dark:text-gray-400 text-lg leading-relaxed">
             Structure organisationnelle de l'établissement et responsables académiques. 
         </p>
     </div>
     <div class="flex gap-3">
-        <x-button variant="primary" icon="add" size="md" href="{{ route('departements. create') }}">
+        <x-button variant="primary" icon="add" size="md" href="{{ route('departements.create') }}">
             Nouveau Département
         </x-button>
     </div>
@@ -45,7 +45,7 @@
             <span class="absolute bottom-0 left-0 h-0.5 w-full bg-[#135bec]"></span>
         </a>
         <a href="{{ route('semestres.index') }}" class="group flex items-center gap-2 pb-4 text-sm font-medium text-[#4c669a] dark:text-gray-400 hover:text-[#135bec] transition-colors">
-            <span class="material-symbols-outlined group-hover: text-[#135bec]">calendar_month</span>
+            <span class="material-symbols-outlined group-hover:text-[#135bec]">calendar_month</span>
             Semestres
         </a>
     </div>
@@ -85,8 +85,8 @@
 
 {{-- Départements List --}}
 <div class="space-y-6">
-    @forelse($departements ??  [] as $departement)
-        <x-card : padding="false">
+    @forelse($departements ?? [] as $departement)
+        <x-card :padding="false">
             <div class="p-6">
                 <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
                     {{-- Left:  Department Info --}}
@@ -96,7 +96,7 @@
                         </div>
                         <div class="flex-1 min-w-0">
                             <div class="flex items-center gap-3 mb-2">
-                                <h3 class="text-xl font-bold text-[#0d121b] dark: text-white">
+                                <h3 class="text-xl font-bold text-[#0d121b] dark:text-white">
                                     {{ $departement->nom ??  'Département Informatique' }}
                                 </h3>
                                 <x-badge variant="success" dot>Actif</x-badge>
@@ -143,11 +143,11 @@
 
                         {{-- Actions --}}
                         <div class="flex gap-2">
-                            <a href="{{ route('departements.show', $departement->id ??  1) }}" class="px-4 py-2 rounded-lg border border-[#e7ebf3] dark:border-gray-700 text-sm font-medium text-[#0d121b] dark:text-white hover:bg-[#f8f9fc] dark:hover:bg-gray-800 transition-colors flex items-center gap-2">
+                            <a href="{{ route('departements.show', $departement->id ?? 1) }}" class="px-4 py-2 rounded-lg border border-[#e7ebf3] dark:border-gray-700 text-sm font-medium text-[#0d121b] dark:text-white hover:bg-[#f8f9fc] dark:hover:bg-gray-800 transition-colors flex items-center gap-2">
                                 <span class="material-symbols-outlined text-[18px]">visibility</span>
                                 Voir détails
                             </a>
-                            <a href="{{ route('departements.edit', $departement->id ?? 1) }}" class="px-4 py-2 rounded-lg border border-[#e7ebf3] dark:border-gray-700 text-sm font-medium text-[#0d121b] dark:text-white hover:bg-[#f8f9fc] dark:hover: bg-gray-800 transition-colors flex items-center gap-2">
+                            <a href="{{ route('departements.edit', $departement->id ?? 1) }}" class="px-4 py-2 rounded-lg border border-[#e7ebf3] dark:border-gray-700 text-sm font-medium text-[#0d121b] dark:text-white hover:bg-[#f8f9fc] dark:hover:bg-gray-800 transition-colors flex items-center gap-2">
                                 <span class="material-symbols-outlined text-[18px]">edit</span>
                                 Modifier
                             </a>
@@ -174,7 +174,7 @@
                             </div>
                             <div class="flex-1 min-w-0">
                                 <div class="flex items-center gap-3 mb-2">
-                                    <h3 class="text-xl font-bold text-[#0d121b] dark: text-white">{{ $dept['nom'] }}</h3>
+                                    <h3 class="text-xl font-bold text-[#0d121b] dark:text-white">{{ $dept['nom'] }}</h3>
                                     <x-badge variant="success" dot>Actif</x-badge>
                                 </div>
                                 <p class="text-sm text-[#4c669a] dark:text-gray-400 mb-3">{{ $dept['desc'] }}</p>

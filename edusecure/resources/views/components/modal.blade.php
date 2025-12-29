@@ -19,9 +19,9 @@
         'info' => 'bg-blue-500',
     ];
 @endphp
-<span {{ $attributes->merge(['class' => 'inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium border ' . $variantClasses[$variant]]) }}>
+<span {{ $attributes->merge(['class' => 'inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium border ' . ($variantClasses[$variant] ?? $variantClasses['default'])]) }}>
     @if($dot)
-        <span class="w-1. 5 h-1.5 rounded-full {{ $dotColors[$variant] }}"></span>
+        <span class="w-1.5 h-1.5 rounded-full {{ $dotColors[$variant] ?? $dotColors['default'] }}"></span>
     @endif
     {{ $slot }}
 </span>

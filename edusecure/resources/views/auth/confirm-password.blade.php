@@ -32,10 +32,10 @@
                     <input :type="showPassword ? 'text' : 'password'" name="password" id="password" required autofocus
                         class="w-full rounded-lg border bg-[#f8f9fc] dark:bg-gray-800 text-sm text-[#0d121b] dark:text-white focus:ring-[#135bec] focus:border-[#135bec] placeholder:text-[#4c669a] pl-10 pr-12 py-2.5 border-[#e7ebf3] dark:border-gray-700"
                         placeholder="Entrez votre mot de passe" />
-                    <button type="button" @click="showPassword = ! showPassword"
+                    <button type="button" @click="showPassword = !showPassword"
                         class="absolute right-3 top-1/2 -translate-y-1/2 text-[#4c669a] hover:text-[#0d121b] dark:hover:text-white transition-colors">
                         <span class="material-symbols-outlined text-[20px]"
-                            x-text="showPassword ?  'visibility_off' : 'visibility'"></span>
+                            x-text="showPassword ? 'visibility_off' : 'visibility'"></span>
                     </button>
                 </div>
                 @error('password')
@@ -58,7 +58,7 @@
         <div class="bg-[#f8f9fc] dark:bg-gray-800/50 rounded-lg p-3 border border-[#e7ebf3] dark:border-gray-700">
             <div class="flex items-start gap-2">
                 <span class="material-symbols-outlined text-[#135bec] text-[18px] mt-0.5">info</span>
-                <p class="text-xs text-[#4c669a] dark: text-gray-400">
+                <p class="text-xs text-[#4c669a] dark:text-gray-400">
                     Cette action nécessite une confirmation de votre identité pour des raisons de sécurité.
                 </p>
             </div>

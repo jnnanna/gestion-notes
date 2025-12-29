@@ -1,4 +1,4 @@
-@extends('layouts. app')
+@extends('layouts.app')
 
 @section('title', 'Gestion des Modules')
 @section('page-title', 'Gestion des Modules')
@@ -7,7 +7,7 @@
     @php
         $breadcrumbs = [
             ['label' => 'Accueil', 'url' => route('dashboard')],
-            ['label' => 'Modules', 'url' => route('modules. index')],
+            ['label' => 'Modules', 'url' => route('modules.index')],
         ];
     @endphp
 
@@ -26,7 +26,7 @@
                 Importer CSV
             </x-button>
             <x-button variant="primary" icon="add" size="md"
-                onclick="Livewire. dispatch('openModal', { component: 'modals. create-module' })">
+                onclick="Livewire.dispatch('openModal', { component: 'modals.create-module' })">
                 Nouveau Module
             </x-button>
         </div>
@@ -75,7 +75,7 @@
                 </label>
                 <div class="flex items-center gap-2">
                     <button
-                        class="flex items-center gap-2 px-3 py-2 text-sm font-medium text-[#4c669a] dark: text-gray-400 bg-white dark:bg-[#1a2234] rounded-lg ring-1 ring-[#e7ebf3] dark:ring-gray-800 hover:bg-[#f8f9fc] dark:hover:bg-gray-800">
+                        class="flex items-center gap-2 px-3 py-2 text-sm font-medium text-[#4c669a] dark:text-gray-400 bg-white dark:bg-[#1a2234] rounded-lg ring-1 ring-[#e7ebf3] dark:ring-gray-800 hover:bg-[#f8f9fc] dark:hover:bg-gray-800">
                         <span class="material-symbols-outlined text-[18px]">filter_list</span>
                         Filtres
                     </button>
@@ -280,7 +280,7 @@
                 {{-- Pagination --}}
                 <div
                     class="flex items-center justify-between border-t border-[#e7ebf3] dark:border-gray-800 bg-[#f8f9fc] dark:bg-gray-800/50 px-6 py-3">
-                    <p class="text-xs text-[#4c669a] dark: text-gray-400">
+                    <p class="text-xs text-[#4c669a] dark:text-gray-400">
                         Affichage de <span class="font-medium">1</span> à <span class="font-medium">4</span> sur <span
                             class="font-medium">24</span> résultats
                     </p>
@@ -289,7 +289,7 @@
                             class="rounded px-2 py-1 text-sm font-medium text-[#4c669a] hover:bg-white hover:text-[#135bec] dark:hover:bg-gray-700 disabled:opacity-50">Préc.
                         </button>
                         <button
-                            class="rounded px-2 py-1 text-sm font-medium text-[#4c669a] hover:bg-white hover: text-[#135bec] dark:hover:bg-gray-700 disabled:opacity-50">Suiv.</button>
+                            class="rounded px-2 py-1 text-sm font-medium text-[#4c669a] hover:bg-white hover:text-[#135bec] dark:hover:bg-gray-700 disabled:opacity-50">Suiv.</button>
                     </div>
                 </div>
             </div>
@@ -307,12 +307,12 @@
                     </div>
                     <div class="flex gap-1">
                         <button
-                            class="rounded-md p-1. 5 text-[#4c669a] hover: bg-[#f8f9fc] dark:hover:bg-gray-800 hover:text-red-500 transition-colors"
+                            class="rounded-md p-1.5 text-[#4c669a] hover:bg-[#f8f9fc] dark:hover:bg-gray-800 hover:text-red-500 transition-colors"
                             title="Supprimer">
                             <span class="material-symbols-outlined text-[20px]">delete</span>
                         </button>
                         <button
-                            class="rounded-md p-1.5 text-[#4c669a] hover: bg-[#f8f9fc] dark:hover:bg-gray-800 transition-colors"
+                            class="rounded-md p-1.5 text-[#4c669a] hover:bg-[#f8f9fc] dark:hover:bg-gray-800 transition-colors"
                             title="Fermer">
                             <span class="material-symbols-outlined text-[20px]">close</span>
                         </button>
@@ -327,12 +327,12 @@
                     <div class="grid grid-cols-2 gap-4">
                         <x-input name="code" label="Code" value="INF-204" required />
 
-                        <x-select name="semestre_id" label="Semestre" : options="[
+                        <x-select name="semestre_id" label="Semestre" :options="[
                                 1 => 'Semestre 1',
                                 2 => 'Semestre 2',
                                 3 => 'Semestre 3',
                                 4 => 'Semestre 4',
-                            ]" : selected="3" required />
+                            ]" :selected="3" required />
                     </div>
 
                     <x-input name="nom" label="Intitulé du Module" value="Bases de Données Relationnelles" required />
@@ -344,7 +344,7 @@
         ]" :selected="1" required />
 
                     {{-- Responsable --}}
-                    <div class="space-y-1. 5">
+                    <div class="space-y-1.5">
                         <label
                             class="text-xs font-bold text-[#4c669a] dark:text-gray-400 uppercase tracking-wide">Responsable</label>
                         <div

@@ -7,7 +7,7 @@
 @php
     $breadcrumbs = [
         ['label' => 'Accueil', 'url' => route('dashboard')],
-        ['label' => 'Filières', 'url' => route('filieres. index')],
+        ['label' => 'Filières', 'url' => route('filieres.index')],
     ];
 @endphp
 
@@ -38,17 +38,17 @@
             <span class="material-symbols-outlined group-hover:text-[#135bec]">view_module</span>
             Modules
         </a>
-        <a href="{{ route('filieres. index') }}" class="relative flex items-center gap-2 pb-4 text-sm font-bold text-[#135bec]">
+        <a href="{{ route('filieres.index') }}" class="relative flex items-center gap-2 pb-4 text-sm font-bold text-[#135bec]">
             <span class="material-symbols-outlined">schema</span>
             Filières
             <span class="absolute bottom-0 left-0 h-0.5 w-full bg-[#135bec]"></span>
         </a>
         <a href="{{ route('departements.index') }}" class="group flex items-center gap-2 pb-4 text-sm font-medium text-[#4c669a] dark:text-gray-400 hover:text-[#135bec] transition-colors">
-            <span class="material-symbols-outlined group-hover: text-[#135bec]">corporate_fare</span>
+            <span class="material-symbols-outlined group-hover:text-[#135bec]">corporate_fare</span>
             Départements
         </a>
         <a href="{{ route('semestres.index') }}" class="group flex items-center gap-2 pb-4 text-sm font-medium text-[#4c669a] dark:text-gray-400 hover:text-[#135bec] transition-colors">
-            <span class="material-symbols-outlined group-hover: text-[#135bec]">calendar_month</span>
+            <span class="material-symbols-outlined group-hover:text-[#135bec]">calendar_month</span>
             Semestres
         </a>
     </div>
@@ -92,7 +92,7 @@
         <x-select 
             name="departement_filter" 
             label="Filtrer par Département"
-            : options="[
+            :options="[
                 '' => 'Tous les départements',
                 1 => 'Informatique',
                 2 => 'Mathématiques',
@@ -125,9 +125,9 @@
 </div>
 
 {{-- Filières Grid --}}
-<div class="grid grid-cols-1 md: grid-cols-2 xl:grid-cols-3 gap-6">
-    @forelse($filieres ??  [] as $filiere)
-        <x-card : padding="false">
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+    @forelse($filieres ?? [] as $filiere)
+        <x-card :padding="false">
             <div class="p-6 space-y-4">
                 {{-- Header --}}
                 <div class="flex items-start justify-between">
@@ -145,10 +145,10 @@
                         </div>
                     </div>
                     <div class="relative" x-data="{ open: false }">
-                        <button @click="open = !open" class="p-1. 5 rounded-lg hover:bg-[#f8f9fc] dark:hover:bg-gray-800 text-[#4c669a]">
+                        <button @click="open = !open" class="p-1.5 rounded-lg hover:bg-[#f8f9fc] dark:hover:bg-gray-800 text-[#4c669a]">
                             <span class="material-symbols-outlined text-[20px]">more_vert</span>
                         </button>
-                        <div x-show="open" @click. away="open = false" x-transition class="absolute right-0 mt-2 w-48 bg-white dark: bg-[#1a2234] rounded-lg shadow-xl border border-[#e7ebf3] dark:border-gray-800 py-2 z-10" style="display: none;">
+                        <div x-show="open" @click. away="open = false" x-transition class="absolute right-0 mt-2 w-48 bg-white dark:bg-[#1a2234] rounded-lg shadow-xl border border-[#e7ebf3] dark:border-gray-800 py-2 z-10" style="display: none;">
                             <a href="#" class="flex items-center gap-2 px-4 py-2 text-sm text-[#0d121b] dark:text-white hover:bg-[#f8f9fc] dark:hover:bg-gray-800">
                                 <span class="material-symbols-outlined text-[18px]">edit</span>
                                 Modifier
@@ -194,7 +194,7 @@
             {{-- Footer --}}
             <div class="px-6 py-3 bg-[#f8f9fc] dark:bg-gray-800/50 border-t border-[#e7ebf3] dark:border-gray-800 flex items-center justify-between">
                 <x-badge variant="success" dot>Active</x-badge>
-                <a href="{{ route('filieres. show', $filiere->id ??  1) }}" class="text-sm font-medium text-[#135bec] hover:text-[#0f4bc4] flex items-center gap-1">
+                <a href="{{ route('filieres.show', $filiere->id ?? 1) }}" class="text-sm font-medium text-[#135bec] hover:text-[#0f4bc4] flex items-center gap-1">
                     Voir détails
                     <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
                 </a>
@@ -210,7 +210,7 @@
             ['code' => 'PH', 'nom' => 'Physique Fondamentale', 'dept' => 'Physique', 'niveau' => 'Master 2', 'modules' => 8, 'etudiants' => 45, 'chef' => 'Dr. Einstein'],
             ['code' => 'CH', 'nom' => 'Chimie Organique', 'dept' => 'Chimie', 'niveau' => 'Licence 3', 'modules' => 14, 'etudiants' => 120, 'chef' => 'Pr. Lavoisier'],
         ] as $sample)
-            <x-card : padding="false">
+            <x-card :padding="false">
                 <div class="p-6 space-y-4">
                     <div class="flex items-start justify-between">
                         <div class="flex items-center gap-3">

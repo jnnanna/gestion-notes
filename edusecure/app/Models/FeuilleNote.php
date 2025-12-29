@@ -13,6 +13,8 @@ class FeuilleNote extends Model
 {
     use HasFactory, SoftDeletes;
 
+    protected $table = 'feuilles_notes';
+
     protected $fillable = [
         'code',
         'module_id',

@@ -12,7 +12,7 @@
             name="{{ $name }}"
             id="{{ $name }}"
             value="{{ $value }}"
-            @if(old($name, $checked)) checked @endif
+            @checked(old($name, $checked))
             {{ $attributes->merge([
                 'class' => 'peer size-5 cursor-pointer appearance-none rounded border border-[#e7ebf3] dark:border-gray-600 bg-white dark:bg-gray-800 checked:bg-[#135bec] checked:border-[#135bec] transition-all focus:ring-2 focus:ring-[#135bec] focus:ring-offset-2'
             ]) }}
@@ -21,12 +21,12 @@
             <span class="material-symbols-outlined text-[16px]">check</span>
         </span>
     </div>
-    
+
     @if($label)
         <label for="{{ $name }}" class="text-sm text-[#0d121b] dark:text-white cursor-pointer select-none">
             {{ $label }}
         </label>
     @endif
-    
+
     {{ $slot }}
 </div>

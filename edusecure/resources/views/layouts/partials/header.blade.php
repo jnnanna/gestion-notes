@@ -7,21 +7,21 @@
         </button>
 
         <!-- Page Title -->
-        <h2 class="text-[#0d121b] dark: text-white text-xl font-bold leading-tight tracking-tight hidden sm:block">
+        <h2 class="text-[#0d121b] dark:text-white text-xl font-bold leading-tight tracking-tight hidden sm:block">
             @yield('page-title', 'Tableau de Bord')
         </h2>
     </div>
 
     <div class="flex items-center gap-4 sm:gap-8">
         <!-- Search Bar -->
-        <label class="hidden md:flex flex-col min-w-40 ! h-10 max-w-64">
+        <label class="hidden md:flex flex-col min-w-40 !h-10 max-w-64">
             <div class="flex w-full flex-1 items-stretch rounded-lg h-full">
                 <div
                     class="text-[#4c669a] flex border-none bg-[#f8f9fc] dark:bg-gray-800 items-center justify-center pl-4 rounded-l-lg border-r-0">
                     <span class="material-symbols-outlined text-[20px]">search</span>
                 </div>
                 <input
-                    class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0d121b] dark:text-white focus:outline-0 focus:ring-0 border-none bg-[#f8f9fc] dark:bg-gray-800 focus:border-none h-full placeholder: text-[#4c669a] px-4 rounded-l-none border-l-0 pl-2 text-sm font-normal leading-normal"
+                    class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0d121b] dark:text-white focus:outline-0 focus:ring-0 border-none bg-[#f8f9fc] dark:bg-gray-800 focus:border-none h-full placeholder:text-[#4c669a] px-4 rounded-l-none border-l-0 pl-2 text-sm font-normal leading-normal"
                     placeholder="Rechercher..." type="text" />
             </div>
         </label>
@@ -43,7 +43,7 @@
             <a href="{{ route('profil.index') }}"
                 class="flex items-center gap-3 pl-1 hover:opacity-80 transition-opacity">
                 <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-9 border-2 border-white shadow-sm"
-                    style="background-image: url('{{ auth()->user()->avatar_url ?? 'https://ui-avatars.com/api/? name=' . urlencode(auth()->user()->name) . '&color=135bec&background=f0f0f0' }}');">
+                    style="background-image: url('{{ auth()->user()->avatar_url ?? 'https://ui-avatars.com/api/?name=' . urlencode(auth()->user()->name) . '&color=135bec&background=f0f0f0' }}');">
                 </div>
                 <div class="hidden lg:flex flex-col">
                     <p class="text-sm font-bold text-[#0d121b] dark:text-white leading-none">{{ auth()->user()->name }}

@@ -26,11 +26,11 @@
             </div>
         </div>
     @endif
-    
+
     <div class="{{ $padding ? 'p-6' : '' }}">
         {{ $slot }}
     </div>
-    
+
     @if($footer)
         <div class="px-6 py-4 bg-[#f8f9fc] dark:bg-gray-800/50 border-t border-[#e7ebf3] dark:border-gray-800">
             {{ $footer }}

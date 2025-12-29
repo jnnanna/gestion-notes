@@ -8,7 +8,7 @@
             </div>
             <div class="flex flex-col">
                 <h1 class="text-lg font-bold leading-none tracking-tight">EduSecure</h1>
-                <p class="text-[#4c669a] dark: text-gray-400 text-xs font-normal mt-1">Gestion des Notes</p>
+                <p class="text-[#4c669a] dark:text-gray-400 text-xs font-normal mt-1">Gestion des Notes</p>
             </div>
         </a>
 
@@ -24,7 +24,7 @@
 
             <!-- Importation -->
             <a href="{{ route('importation.index') }}"
-                class="flex items-center gap-3 px-3 py-3 rounded-lg {{ request()->routeIs('importation.*') ? 'bg-[#135bec]/10 text-[#135bec]' : 'text-[#4c669a] dark:text-gray-400 hover:bg-[#f8f9fc] dark: hover:bg-gray-800' }} transition-colors">
+                class="flex items-center gap-3 px-3 py-3 rounded-lg {{ request()->routeIs('importation.*') ? 'bg-[#135bec]/10 text-[#135bec]' : 'text-[#4c669a] dark:text-gray-400 hover:bg-[#f8f9fc] dark:hover:bg-gray-800' }} transition-colors">
                 <span
                     class="material-symbols-outlined {{ request()->routeIs('importation.*') ? 'icon-filled' : '' }} text-[24px]">document_scanner</span>
                 <p class="text-sm font-medium leading-normal">Importation</p>
@@ -68,10 +68,10 @@
                 </button>
             </div>
             <p class="text-sm font-semibold mb-1">Stockage Sécurisé</p>
-            <div class="w-full bg-white/20 rounded-full h-1. 5 mb-2">
+            <div class="w-full bg-white/20 rounded-full h-1.5 mb-2">
                 <div class="bg-white h-1.5 rounded-full" style="width: 75%"></div>
             </div>
-            <p class="text-xs text-white/80">7. 5 GB / 10 GB utilisés</p>
+            <p class="text-xs text-white/80">7.5 GB / 10 GB utilisés</p>
         </div>
 
         <!-- Logout -->

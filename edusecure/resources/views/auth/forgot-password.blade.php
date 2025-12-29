@@ -1,4 +1,4 @@
-@extends('layouts. guest')
+@extends('layouts.guest')
 
 @section('title', 'Mot de passe oublié')
 
@@ -52,7 +52,7 @@
                 <span class="material-symbols-outlined text-blue-600 text-[20px] mt-0.5">info</span>
                 <div>
                     <p class="text-sm font-semibold text-blue-900 dark:text-blue-300">Vérifiez votre boîte de réception</p>
-                    <p class="text-xs text-blue-700 dark: text-blue-400 mt-1">
+                    <p class="text-xs text-blue-700 dark:text-blue-400 mt-1">
                         Le lien de réinitialisation sera envoyé à l'adresse email si un compte existe.
                         Le lien est valable pendant 60 minutes.
                     </p>
@@ -62,7 +62,7 @@
 
         <!-- Contact Support -->
         <div class="text-center pt-2">
-            <p class="text-xs text-[#4c669a] dark: text-gray-400">
+            <p class="text-xs text-[#4c669a] dark:text-gray-400">
                 Vous n'avez pas reçu d'email ? Vérifiez vos spams ou
                 <a href="#" class="text-[#135bec] hover:text-[#0f4bc4] font-medium transition-colors">contactez le
                     support</a>

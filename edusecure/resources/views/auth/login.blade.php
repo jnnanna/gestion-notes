@@ -24,7 +24,8 @@
             @csrf
 
             <!-- Email Address -->
-            <x-input name="email" type="email" label="Adresse Email" placeholder="exemple@university.edu" icon="email" value="{{ old('email') }}" required autofocus />
+            <x-input name="email" type="email" label="Adresse Email" placeholder="exemple@university.edu" icon="email"
+                value="{{ old('email') }}" required autofocus />
 
             <!-- Password -->
             <div class="space-y-1.5">

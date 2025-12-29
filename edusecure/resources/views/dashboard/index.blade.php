@@ -18,7 +18,7 @@
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
     <x-stat-card 
         title="Feuilles Scannées" 
-        : value="$stats['feuilles_scannees'] ?? '1,240'" 
+        :value="$stats['feuilles_scannees'] ?? '1,240'" 
         icon="description" 
         iconBg="blue"
         trend="up"
@@ -28,7 +28,7 @@
     
     <x-stat-card 
         title="Modules Actifs" 
-        : value="$stats['modules_actifs'] ?? '12'" 
+        :value="$stats['modules_actifs'] ?? '12'" 
         icon="view_module" 
         iconBg="purple"
         subtitle="En cours"
@@ -56,7 +56,7 @@
     {{-- Left Column (2/3) --}}
     <div class="xl:col-span-2 space-y-8">
         {{-- Recent Activities Table --}}
-        <x-card title="Activités Récentes" : padding="false">
+        <x-card title="Activités Récentes" :padding="false">
             <x-slot name="title">
                 <div class="flex items-center justify-between w-full">
                     <h3 class="text-lg font-bold text-[#0d121b] dark:text-white">Activités Récentes</h3>
@@ -90,7 +90,7 @@
                                         </span>
                                     </div>
                                 </td>
-                                <td class="px-6 py-4 text-sm text-[#4c669a] dark: text-gray-400">
+                                <td class="px-6 py-4 text-sm text-[#4c669a] dark:text-gray-400">
                                     {{ $activite['professeur'] ?? 'Dr. Sarah Martin' }}
                                 </td>
                                 <td class="px-6 py-4 text-sm text-[#4c669a] dark:text-gray-400">
@@ -139,10 +139,10 @@
                                 <td class="px-6 py-4">
                                     <div class="flex items-center gap-3">
                                         <div class="size-8 rounded bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center text-purple-600 font-bold text-xs">BD</div>
-                                        <span class="text-sm font-medium text-[#0d121b] dark: text-white">Bases de Données</span>
+                                        <span class="text-sm font-medium text-[#0d121b] dark:text-white">Bases de Données</span>
                                     </div>
                                 </td>
-                                <td class="px-6 py-4 text-sm text-[#4c669a] dark: text-gray-400">Pr. Ahmed Mansouri</td>
+                                <td class="px-6 py-4 text-sm text-[#4c669a] dark:text-gray-400">Pr. Ahmed Mansouri</td>
                                 <td class="px-6 py-4 text-sm text-[#4c669a] dark:text-gray-400">29 Déc, 09:45</td>
                                 <td class="px-6 py-4">
                                     <x-badge variant="warning" dot>En attente</x-badge>
@@ -153,7 +153,7 @@
                                     </button>
                                 </td>
                             </tr>
-                            <tr class="hover:bg-gray-50 dark:hover: bg-gray-800/50 transition-colors">
+                            <tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
                                 <td class="px-6 py-4">
                                     <div class="flex items-center gap-3">
                                         <div class="size-8 rounded bg-pink-100 dark:bg-pink-900/30 flex items-center justify-center text-pink-600 font-bold text-xs">RS</div>
@@ -182,7 +182,7 @@
             <x-slot name="title">
                 <div class="flex items-center justify-between w-full">
                     <h3 class="text-lg font-bold text-[#0d121b] dark:text-white">Répartition des Moyennes</h3>
-                    <select class="bg-[#f8f9fc] dark:bg-gray-800 border-none rounded-lg text-xs font-medium px-3 py-1. 5 focus:ring-0">
+                    <select class="bg-[#f8f9fc] dark:bg-gray-800 border-none rounded-lg text-xs font-medium px-3 py-1.5 focus:ring-0">
                         <option>Ce Semestre</option>
                         <option>Semestre Précédent</option>
                         <option>Année Complète</option>
@@ -249,12 +249,12 @@
                     </div>
                     <div class="text-left">
                         <p class="font-bold text-base leading-tight">Upload PDF</p>
-                        <p class="text-[#4c669a] dark: text-gray-400 text-xs mt-0.5">Importer fichier existant</p>
+                        <p class="text-[#4c669a] dark:text-gray-400 text-xs mt-0.5">Importer fichier existant</p>
                     </div>
                 </a>
 
                 <a href="{{ route('exportation.index') }}" class="group flex items-center p-4 bg-white dark:bg-[#1a2234] border border-[#e7ebf3] dark:border-gray-800 rounded-xl hover:border-[#135bec]/50 dark:hover:border-[#135bec]/50 transition-all text-[#0d121b] dark:text-white">
-                    <div class="bg-purple-50 dark:bg-purple-900/20 text-purple-600 p-3 rounded-lg mr-4 group-hover: scale-110 transition-transform">
+                    <div class="bg-purple-50 dark:bg-purple-900/20 text-purple-600 p-3 rounded-lg mr-4 group-hover:scale-110 transition-transform">
                         <span class="material-symbols-outlined text-[24px]">assessment</span>
                     </div>
                     <div class="text-left">
@@ -284,7 +284,7 @@
                             {{ $alerte['icon'] }}
                         </span>
                         <div>
-                            <p class="text-sm font-semibold text-[#0d121b] dark: text-white">{{ $alerte['titre'] }}</p>
+                            <p class="text-sm font-semibold text-[#0d121b] dark:text-white">{{ $alerte['titre'] }}</p>
                             <p class="text-xs text-[#4c669a] dark:text-gray-400 mt-1">{{ $alerte['message'] }}</p>
                             @if(isset($alerte['action']))
                                 <button class="text-xs font-bold text-{{ $alerte['type'] }}-600 mt-2 hover:underline">
@@ -299,7 +299,7 @@
                         <span class="material-symbols-outlined text-orange-600 text-[20px] mt-0.5">warning</span>
                         <div>
                             <p class="text-sm font-semibold text-[#0d121b] dark:text-white">Moyenne Critique</p>
-                            <p class="text-xs text-[#4c669a] dark: text-gray-400 mt-1">
+                            <p class="text-xs text-[#4c669a] dark:text-gray-400 mt-1">
                                 Module "Chimie Org." :  La moyenne est inférieure à 8/20. 
                             </p>
                         </div>
@@ -328,7 +328,7 @@
                     Tous les documents sont chiffrés et archivés de manière sécurisée.
                 </p>
             </div>
-            <div class="absolute top-3 right-3 bg-white/20 backdrop-blur-sm p-1. 5 rounded-lg text-white">
+            <div class="absolute top-3 right-3 bg-white/20 backdrop-blur-sm p-1.5 rounded-lg text-white">
                 <span class="material-symbols-outlined text-[18px]">lock</span>
             </div>
         </div>

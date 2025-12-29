@@ -24,28 +24,27 @@
             <input type="hidden" name="token" value="{{ $request->route('token') }}">
 
             <!-- Email Address -->
-            <x-input name="email" type="email" label="Adresse Email" placeholder="exemple@university.edu" icon="email" :
-                value="old('email', $request->email)" required readonly />
+            <x-input name="email" type="email" label="Adresse Email" placeholder="exemple@university.edu" icon="email" :value="old('email', $request->email)" required readonly />
 
             <!-- Password -->
             <div class="space-y-1.5">
-                <label for="password" class="text-sm font-semibold text-[#0d121b] dark: text-white">
+                <label for="password" class="text-sm font-semibold text-[#0d121b] dark:text-white">
                     Nouveau mot de passe
                     <span class="text-red-500">*</span>
                 </label>
                 <div class="relative" x-data="{ showPassword: false }">
                     <span
                         class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[#4c669a] text-[20px]">lock</span>
-                    <input :type="showPassword ?  'text' : 'password'" name="password" id="password" required
-                        class="w-full rounded-lg border bg-[#f8f9fc] dark: bg-gray-800 text-sm text-[#0d121b] dark:text-white focus:ring-[#135bec] focus:border-[#135bec] placeholder:text-[#4c669a] pl-10 pr-12 py-2.5 border-[#e7ebf3] dark: border-gray-700"
+                    <input :type="showPassword ? 'text' : 'password'" name="password" id="password" required
+                        class="w-full rounded-lg border bg-[#f8f9fc] dark:bg-gray-800 text-sm text-[#0d121b] dark:text-white focus:ring-[#135bec] focus:border-[#135bec] placeholder:text-[#4c669a] pl-10 pr-12 py-2.5 border-[#e7ebf3] dark:border-gray-700"
                         placeholder="Minimum 8 caractères" />
                     <button type="button" @click="showPassword = !showPassword"
-                        class="absolute right-3 top-1/2 -translate-y-1/2 text-[#4c669a] hover:text-[#0d121b] dark: hover:text-white transition-colors">
+                        class="absolute right-3 top-1/2 -translate-y-1/2 text-[#4c669a] hover:text-[#0d121b] dark:hover:text-white transition-colors">
                         <span class="material-symbols-outlined text-[20px]"
-                            x-text="showPassword ? 'visibility_off' :  'visibility'"></span>
+                            x-text="showPassword ? 'visibility_off' : 'visibility'"></span>
                     </button>
                 </div>
-                <p class="text-xs text-[#4c669a] dark: text-gray-400 ml-1">
+                <p class="text-xs text-[#4c669a] dark:text-gray-400 ml-1">
                     Utilisez au moins 8 caractères avec des lettres, chiffres et symboles
                 </p>
                 @error('password')
@@ -65,9 +64,9 @@
                 <div class="relative" x-data="{ showConfirmPassword: false }">
                     <span
                         class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[#4c669a] text-[20px]">lock</span>
-                    <input :type="showConfirmPassword ?  'text' : 'password'" name="password_confirmation"
+                    <input :type="showConfirmPassword ? 'text' : 'password'" name="password_confirmation"
                         id="password_confirmation" required
-                        class="w-full rounded-lg border bg-[#f8f9fc] dark:bg-gray-800 text-sm text-sm text-[#0d121b] dark:text-white focus:ring-[#135bec] focus:border-[#135bec] placeholder:text-[#4c669a] pl-10 pr-12 py-2.5 border-[#e7ebf3] dark:border-gray-700"
+                        class="w-full rounded-lg border bg-[#f8f9fc] dark:bg-gray-800 text-sm text-[#0d121b] dark:text-white focus:ring-[#135bec] focus:border-[#135bec] placeholder:text-[#4c669a] pl-10 pr-12 py-2.5 border-[#e7ebf3] dark:border-gray-700"
                         placeholder="Confirmez votre mot de passe" />
                     <button type="button" @click="showConfirmPassword = !showConfirmPassword"
                         class="absolute right-3 top-1/2 -translate-y-1/2 text-[#4c669a] hover:text-[#0d121b] dark:hover:text-white transition-colors">
