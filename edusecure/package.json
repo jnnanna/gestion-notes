@@ -15,6 +15,7 @@
         "vite": "^7.0.7"
     },
     "dependencies": {
-        "@material-design-icons/font": "^0.14.15"
+        "@material-design-icons/font": "^0.14.15",
+        "alpinejs": "^3.15.3"
     }
 }
